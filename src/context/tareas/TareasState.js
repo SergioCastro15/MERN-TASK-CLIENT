@@ -34,7 +34,7 @@ export const TareasState = (props) => {
             { nombre: 'Elegir plataforma de pago 5', estado: false, proyectoId: 3, id: 15 },
         ],
         tareasFiltradas: [],
-        errorFormulario: true,
+        errorFormulario: false,
         tareaActual : {},
         estaEditando: false
     }
