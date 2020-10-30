@@ -69,7 +69,7 @@ export const FormTarea = () => {
                         type='text'
                         className='input-text'
                         placeholder='Nombre tarea'
-                        value={state.nombre}
+                        value={state.nombre || ''}
                         name='nombre'
                         onChange={handleInputChange}
                     />
