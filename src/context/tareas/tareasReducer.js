@@ -15,7 +15,7 @@ export const tareasReducer = (state, action) => {
         },
         'ELIMINAR_TAREA': {
             ...state,
-            tareasFiltradas: state.tareasFiltradas.filter(tarea => tarea.id !== action.payload)
+            tareasProyecto: state.tareasProyecto.filter(tarea => tarea.id !== action.payload)
         },
         'ESTADO_TAREA': {
             ...state,
@@ -35,13 +35,13 @@ export const tareasReducer = (state, action) => {
             tareaActual: state.tareasFiltradas.find(tarea => tarea.id === action.payload),
             estaEditando: true
         },
-        'EDITAR_TAREAS': {
-            ...state,
-            estaEditando: false,
-            tareasProyecto: state.tareasProyecto.map(
-                tarea => tarea.id === action.payload.id ? action.payload : tarea
-            )
-        }
+        // 'EDITAR_TAREAS': {
+        //     ...state,
+        //     estaEditando: false,
+        //     tareasProyecto: state.tareasProyecto.map(
+        //         tarea => tarea.id === action.payload.id ? action.payload : tarea
+        //     )
+        // }
     }
 
     return tareasReducerAction[action.type] || state;

@@ -6,11 +6,17 @@ export const Tarea = ({tarea}) => {
     const { 
         eliminarTarea, 
         cambiarEstadoTarea,
-        obtenerTareaActual 
+        obtenerTareaActual,
+        filtrarTareas
     } = useContext(tareasContext)
 
     const handleClickEstado = () => {
         cambiarEstadoTarea(tarea.id)
+    }
+
+    const handleClickEliminar = () => {
+        eliminarTarea(tarea.id);
+        filtrarTareas(tarea.proyectoId);
     }
 
     return (
@@ -52,7 +58,7 @@ export const Tarea = ({tarea}) => {
                 </button>
 
                 <button 
-                    onClick={() => eliminarTarea(tarea.id)}
+                    onClick={handleClickEliminar}
                     type='button'
                     className='btn btn-secundario'
                 >
