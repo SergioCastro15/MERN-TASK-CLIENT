@@ -12,6 +12,7 @@ export const Tarea = ({tarea}) => {
 
     const handleClickEstado = () => {
         cambiarEstadoTarea(tarea.id)
+        filtrarTareas(tarea.proyectoId);
     }
 
     const handleClickEliminar = () => {
